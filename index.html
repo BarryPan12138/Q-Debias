@@ -1,47 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Q-Debias</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="bg-gray-50">
+    <main class="max-w-5xl mx-auto px-4 py-8">
+        <!-- Title Section -->
+        <section class="mb-16 text-center">
+            <h1 class="text-4xl font-bold mb-6">
+                Mitigating Perception Bias: A Training-Free Approach to Enhance LMM for Image Quality Assessment
+            </h1>
 
-    <main>
-        <section id="home">
-            <h1>Welcome to My Portfolio</h1>
-            <p>Here you can showcase your work and projects</p>
+            <div class="mb-4 text-lg">
+                <a href="#" class="text-blue-600 hover:underline">Siyi Pan</a><sup>1</sup>,
+                <a href="#" class="text-blue-600 hover:underline">Baoliang Chen</a><sup>1✉</sup>,
+                <a href="#" class="text-blue-600 hover:underline">Danni Huang</a><sup>1</sup>,
+                <a href="#" class="text-blue-600 hover:underline">Hanwei Zhu</a><sup>2</sup>,
+                <a href="#" class="text-blue-600 hover:underline">Xiangjie Sui</a><sup>2</sup>,
+                <a href="#" class="text-blue-600 hover:underline">Siqi Wang</a><sup>2</sup>
+            </div>
+
+            <div class="text-gray-600 mb-4">
+                <span><sup>1</sup>South China Normal University</span>
+                <span class="mx-4">|</span>
+                <span><sup>2</sup>City University of Hong Kong</span>
+            </div>
+
+            <div class="text-xl font-semibold text-gray-700 mb-6">
+                CVPR 2025
+            </div>
+
+            <div class="flex justify-center gap-4">
+                <a href="#" class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition-colors">
+                    📄 Paper
+                </a>
+                <a href="#" class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition-colors">
+                    🗎 arXiv
+                </a>
+                <a href="#" class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition-colors">
+                    💻 Code
+                </a>
+                <a href="#" class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition-colors">
+                    📊 Data
+                </a>
+                <a href="#" class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition-colors">
+                    🤖 Chatbot
+                </a>
+            </div>
         </section>
 
-        <section id="projects">
-            <h2>My Projects</h2>
-            <!-- Add your projects here -->
+        <!-- Framework Section -->
+        <section class="mb-16">
+            <h1 class="text-3xl font-bold text-center mb-8">Framework</h1>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <img src="./img/frame.png" alt="Framework of AesExpert" class="w-full rounded-lg mb-4">
+<!--                <p class="text-gray-700 leading-relaxed">-->
+<!--                    <strong>Figure 1:</strong> Overview of our proposed AesExpert framework. Our model leverages multi-modal information-->
+<!--                    to assess image aesthetics through a foundation model approach. The framework consists of several key components:-->
+<!--                    (a) multi-modal feature extraction, (b) cross-modal fusion mechanism, and (c) aesthetic prediction head.-->
+<!--                </p>-->
+            </div>
         </section>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <!-- Add your information here -->
+        <!-- Abstract Section -->
+        <section class="mb-16">
+            <h1 class="text-3xl font-bold text-center mb-8">Abstract</h1>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p class="text-gray-700 leading-relaxed">
+                    Despite the impressive performance of large multimodal models (LMMs)  in high-level visual tasks, their capacity for image quality assessment (IQA) remains limited. One main reason is that LMMs are primarily trained for high-level tasks (e.g., image captioning), emphasizing unified image semantics extraction under varied quality. Such semantic-aware yet quality-insensitive perception bias inevitably leads to a heavy reliance on image semantics when those LMMs are forced for quality rating. In this paper, instead of retraining or tuning an LMM costly, we propose a training-free debiasing framework, in which the image quality prediction is rectified by mitigating the bias caused by image semantics. Specifically, we first explore several semantic-preserving distortions that can significantly degrade image quality while maintaining identifiable semantics. By applying these specific distortions to the query/test images, we ensure that the degraded images are recognized as poor quality while their semantics remain. During quality inference, both a query image and its corresponding degraded version are fed to the LMM along with a prompt indicating that the query image quality should be inferred under the condition that the degraded one is deemed poor quality.  This prior condition effectively aligns the LMM’s quality perception, as all degraded images are consistently rated as poor quality, regardless of their semantic difference.
+                    Finally, the quality scores of the query image inferred under different prior conditions (degraded versions) are aggregated using a conditional probability model. Extensive experiments on various IQA datasets show that our debiasing framework could consistently enhance the LMM performance and the code will be publicly available.
+                </p>
+            </div>
         </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <!-- Add your contact information here -->
+        <!-- Pipeline Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Visualization</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex justify-center">
+                    <img src="./img/exp.jpg" alt="Research Pipeline" class="w-full max-w-4xl rounded-lg"/>
+<!--                </div>-->
+<!--                <div class="mt-6 grid grid-cols-3 gap-4 text-center text-sm text-gray-600">-->
+<!--                    <div>-->
+<!--                        <p class="font-semibold">Experiment Preparation</p>-->
+<!--                        <p>(a) 21K diverse-sourced images</p>-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--                        <p class="font-semibold">Collecting Human Feedback</p>-->
+<!--                        <p>(b) 88K human natural language feedbacks</p>-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--                        <p class="font-semibold">Generating Instruction-following Data</p>-->
+<!--                        <p>(c) 409K multi-typed instructions</p>-->
+<!--                    </div>-->
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Table Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Experiment</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex justify-center">
+                    <img src="./img/experiment.jpg" alt="Research Pipeline" class="w-full max-w-4xl rounded-lg"/>
+                </div>
+            </div>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
-    </footer>
 </body>
 </html>
