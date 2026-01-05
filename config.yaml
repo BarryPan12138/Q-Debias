@@ -1,0 +1,46 @@
+settings:
+  image_paths:
+    # - "../datasets/ChallengeDB_release/Images/"
+    # - "../datasets/koniq-10k/images/"
+    # - "../datasets/AGIQA-3K/"
+    # - "../datasets/kadid10k/images/"
+    # - "../datasets/SPAQ/images/"
+    # - "../datasets/SIQAD/DistortedImages/"
+    # - "../datasets/PIPAL/"
+    # - "./datasets/NNID/sub512/"
+    # - "./datasets/NNID/sub1024/"
+    # - "./datasets/NNID/sub2048/"
+    # - "../datasets/AGIQA-1K/"
+    # - "../datasets/databaserelease2/"
+    # - "../datasets/EQ420_image/"
+    # - "../datasets/AVA_dataset/image/"
+    - "../datasets/AGIQA-6K/"
+  jsons:
+    # - "../jsons/livec.json"
+    # - "../jsons/koniq.json"
+    # - "../jsons/AGIQA-3k.json"
+    # - "../jsons/kadid.json"
+    # - "../jsons/SPAQ.json"
+    # - "../jsons/SIQAD.json"
+    # - "../jsons/PIPAL.json"
+    # - "../jsons/NNID512.json"
+    # - "../jsons/NNID1024.json"
+    # - "../jsons/NNID2048.json"
+    # - "../jsons/AGIQA-1k.json"
+    # - "../jsons/live.json"
+    # - "../jsons/VCIP_train.json"
+    # - "../pyiqa_result_dst/koniq_gt.json"
+    # - "../pyiqa_result_dst/kadid_gt.json"
+    # - "../jsons/AVA_sampled.json"
+    - "../jsons/AGIQA-6K.json"
+  corruption_name: 
+      - zoom_blur
+      - spatter
+      - saturate
+      - fog
+  severity: 
+      - 3
+      - 3
+      - 3
+      - 4
+
